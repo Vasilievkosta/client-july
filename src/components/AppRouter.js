@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
+import About from '../pages/About';
 import { Context } from '../index';
 
 const AppRouter = () => {
@@ -14,7 +15,7 @@ const AppRouter = () => {
             {publicRoutes.map(({ path, Component }) =>
                 <Route key={path} path={path} element={<Component />} />
             )}
-            {/* <Route path='*' element={<Shop />} /> */}
+            <Route path='*' element={<About />} />
         </Routes>
     );
 }
