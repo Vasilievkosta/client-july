@@ -28,35 +28,33 @@ const Auth = observer(() => {
         } catch (e) {
             alert(e.response.data.message)
         }
-
     }
 
 
 
     return (
-        <div className="Auth">
-            <h2>{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
+        <div className="auth" >
+            <h2 className="auth__title">{isLogin ? 'Авторизация' : 'Регистрация'}</h2>
             <form>
-                <input placeholder='Введите ваш email...' type='text' value={email} onChange={e => setEmail(e.target.value)} />
+                <input className="auth__input" placeholder='Введите ваш email...' type='text' value={email} onChange={e => setEmail(e.target.value)} />
                 <p></p>
-                <input placeholder='Введите ваш пароль...' type='password' value={password} onChange={e => setPassword(e.target.value)} />
+                <input className="auth__input" placeholder='Введите ваш пароль...' type='password' value={password} onChange={e => setPassword(e.target.value)} />
 
                 <br />
-                <button type='button' onClick={click}>{isLogin ? 'Войти' : 'Регистрация'} </button>
+                <button className="auth__btn" type='button' onClick={click}>{isLogin ? 'Войти' : 'Регистрация'} </button>
                 <div>
                     {isLogin ?
-                        <p>
-                            Нет аккаунта? <NavLink to={'/registration'}>Зарегестрируйся</NavLink>
+                        <p className="auth__acc">
+                            Нет аккаунта? <NavLink className='auth__link' to={'/registration'}>Зарегестрируйся</NavLink>
                         </p>
                         :
-                        <p>
-                            Есть аккаунт? <NavLink to={'/login'}>Войдите</NavLink>
+                        <p className="auth__acc">
+                            Есть аккаунт? <NavLink className='auth__link' to={'/login'}>Войдите</NavLink>
                         </p>
                     }
                 </div>
-
             </form>
-        </div>
+        </div >
     );
 })
 
