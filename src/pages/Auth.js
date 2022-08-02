@@ -45,7 +45,7 @@ const Auth = observer(() => {
                 <div>
                     {isLogin ?
                         <p className="auth__acc">
-                            Нет аккаунта? <NavLink className='auth__link' to={'/registration'}>Зарегестрируйся</NavLink>
+                            Нет аккаунта? <NavLink className='auth__link' to={'/registration'}>Зарегистрируйся</NavLink>
                         </p>
                         :
                         <p className="auth__acc">
